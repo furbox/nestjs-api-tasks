@@ -23,7 +23,6 @@ export class TaskController {
   @Post()
   create(@Body() taskDTO: TaskDTO) {
     return new Promise((resolve, reject) => {
-      resolve
       reject('Error en peticion');
     });
     //return this.taskService.create(taskDTO);
