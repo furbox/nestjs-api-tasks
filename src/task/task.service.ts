@@ -7,10 +7,10 @@ import { v4 as uuidv4 } from 'uuid';
 export class TaskService {
   tasks: ITask[] = [];
 
-  create(TaskDTO: TaskDTO): ITask {
+  create(taskDTO: TaskDTO): ITask {
     const task = {
       id: uuidv4(),
-      ...TaskDTO,
+      ...taskDTO,
     };
     this.tasks = [...this.tasks, task];
     return task;

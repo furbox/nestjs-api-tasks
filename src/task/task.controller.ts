@@ -9,6 +9,8 @@ import {
   Put,
   Query,
   Req,
+  UsePipes,
+  ValidationPipe,
 } from '@nestjs/common';
 import { Request } from 'express';
 import { TaskDTO } from './dto/task.dto';
@@ -20,7 +22,10 @@ export class TaskController {
 
   @Post()
   create(@Body() taskDTO: TaskDTO) {
-    return this.taskService.create(taskDTO);
+    return new Promise((resolve, reject) => {
+      reject('Error en peticion');
+    });
+    //return this.taskService.create(taskDTO);
   }
 
   @Get()
